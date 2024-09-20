@@ -1,0 +1,12 @@
+---
+
+env: test
+
+applications:
+  bitwarden:
+    namespace: bitwarden
+    chart:
+      name: self-host
+      repo: https://charts.bitwarden.com/
+      version: 2024.7.1
+

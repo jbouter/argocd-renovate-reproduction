@@ -1,0 +1,18 @@
+---
+
+applications:
+
+  argocd:
+    namespace: argocd
+    chart:
+      name: argo-cd
+      repo: https://argoproj.github.io/argo-helm
+      version: 7.4.2
+
+  blackbox-exporter:
+    namespace: blackbox-exporter
+    chart:
+      name: prometheus-blackbox-exporter
+      repo: https://prometheus-community.github.io/helm-charts
+      version: 8.17.0
+

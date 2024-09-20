@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["renovate/renovate-config"],
+  "baseBranches": ["main"],
+  "dependencyDashboard": false,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "helm",
+      "fileMatch": ["^values.*?\\.ya?ml$"],
+      "matchStrings": ["^\\s+name: (?<depName>.*?)\\s+repo: (?<registryUrl>.*?)\\s+version: (?<currentValue>.*?)$"]
+    }
+  ]
+}
