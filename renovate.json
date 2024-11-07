@@ -1,17 +1,23 @@
 {
   "extends": [
-    "config:recommended",
-    "mergeConfidence:all-badges"
+    "config:recommended"
   ],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranches": ["main"],
+  "baseBranches": [
+    "main"
+  ],
   "dependencyDashboard": false,
   "customManagers": [
     {
       "customType": "regex",
       "datasourceTemplate": "helm",
-      "fileMatch": ["^values.*?\\.ya?ml$"],
-      "matchStrings": ["^\\s+name: (?<depName>.*?)\\s+repo: (?<registryUrl>.*?)\\s+version: (?<currentValue>.*?)$"]
+      "fileMatch": [
+        "^values\\.ya?ml$",
+        "^values\\.[a-z]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "name: (?<depName>.*?)\\s.*repo: (?<registryUrl>.*?)\\s.*version: (?<currentValue>.*?)\\s"
+      ]
     }
   ]
 }

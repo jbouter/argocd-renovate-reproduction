@@ -7,12 +7,11 @@ applications:
     chart:
       name: argo-cd
       repo: https://argoproj.github.io/argo-helm
-      version: 7.4.2
+      version: 7.4.1
 
   blackbox-exporter:
     namespace: blackbox-exporter
     chart:
       name: prometheus-blackbox-exporter
       repo: https://prometheus-community.github.io/helm-charts
-      version: 8.17.0
-
+      version: 8.16.0
